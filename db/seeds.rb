@@ -12,8 +12,7 @@ Pokemon.destroy_all
 json = ActiveSupport::JSON.decode(File.read('db/pokedex.json'))
 
 json['pokemon'].each do |item|
-  new_pokemon = Pokemon.new
-  new_pokemon.id = item['id']
+  new_pokemon = Pokemon.new  
   new_pokemon.num = item['num']
   new_pokemon.name = item['name']
   new_pokemon.img = item['img']
